@@ -2,9 +2,9 @@ jupyter
 kaggle
 pandas
 numpy
-pathlib
 pillow
-glob
 split-folders
 mahotas
-shutil
+tensorflow
+scikit-learn
+lime

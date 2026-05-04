@@ -33,8 +33,8 @@ A sample plot of images from each class tells us several things. Firstly, many o
 
 ### Varying Image Sizes
 <p float="left">
-  <img src=images/avg_size.png width="400" />
-  <img src=images/size_plot.png width="400" /> 
+  <img src=images/avg_size.png width="420" />
+  <img src=images/size_plot.png width="365" /> 
 </p>
 
 These two plots highlight the variability in image sizes in the dataset. Melanoma, nevus, and sebhorreic keratosis had significantly bigger images compared to the other classes. Initial CNN modeling attempts directly resized the images down to 224x224. compressing the larger images and distorting lesion boundaries.
@@ -54,7 +54,20 @@ After applying a stratified split in both pipelines, the following preprocessing
 - Save results in a CSV file for later training
 
 ## Modeling Choice and Training
-The following models were trained and evaluated:
+The following models were trained on Google Colab using GPU runtime:
+- MobileNetV2: Lightweight baseline. Used extensively in image classification.
+  - Adam optimizer
+  - lr = 0.001
+  - Categorical Crossentropy 
+  - Epochs = 20
+  - Batch = 32
+- ResNet50: Significantly heavier architecture. Let's us gauge if model depth is a limiting factor.
+  - Adam optimizer
+  - lr = 0.001
+  - Categorical Crossentropy 
+  - Epochs = 20
+- Random Forest: Used in classical computer vision to great success, handles imbalances well.
+- XGBoost: One of the best performing tree-based models. Also has been used extensively in classical computer vision.
 
 ## How to Run
 1. 
