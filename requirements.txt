@@ -1,2 +1,10 @@
-jupyter notebook
+jupyter
 kaggle
+pandas
+numpy
+pathlib
+pillow
+glob
+split-folders
+mahotas
+shutil
