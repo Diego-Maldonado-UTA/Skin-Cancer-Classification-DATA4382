@@ -13,24 +13,24 @@ Authors: Diego Maldonado, Sidhantaa Sarna, Tiffany De La Cruz
 |---------------|--------------------------------|
 | **Source**    | [Skin Cancer ISIC Dataset](https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic)      |
 | **Type**      | JPG images   |
-| **Size**      | 2,357 images, 9 classes|
- 
+| **Size**      | 2,357 images, 9 classes, 782 MB
 
----
+- - -
+## Exploratory Data Analysis
+Initial analysis of the images reveals several insights:
 
-![Image Samples](images/sample_plot.png)
-Sample plot of all 9 classes
+![Visualization 1](images/class_distribution.png)
+The graph above visualizes the high class imbalance in the dataset, the main problem with the dataset. In such a small dataset, this imbalance is exacerbated. However, this initial observation inspired our alternative approach. Studies have shown that despite their complexity, deep learning models still underperform on small and imbalanced tabular datasets compared to tree-based models. (Grinsztajn et al., 2022)  
 
-## Data Preprocessing 
-Although both pipelines had a stratified split applied, they differed in several ways.
+<br>
 
-Deep Learning:
-- Apply [DullRazor](https://pubmed.ncbi.nlm.nih.gov/9437554/) algorithm to remove hair follicles
-- Resize shortest side to 256 and center crop 224x224
-- Normalize pixel data
+![Visualization 2](images/sample_plot.png)
+A sample plot of images from each class tells us several things. Firstly, many of the classes closely resemble each other, making a classification task even more difficult. Additionally, there are artifacts such as hair follicles and the edges of the dermoscopic camera that need to be removed before training. 
 
-Machine Learning:
-- Combine class labels
-- Extract raw features 
-- Engineer ABCD features
-- Add features to a CSV file and save
+<br>
+
+
+<p float="left">
+  <img src=images/avg_size.png width="400" />
+  <img src=images/size_plot.png width="350" /> 
+</p>
