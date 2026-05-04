@@ -54,6 +54,15 @@ After applying a stratified split in both pipelines, the following preprocessing
 - Save results in a CSV file for later training
 
 ## Modeling Choice and Training
-Models were chosen based on several factors. MobileNetV2 was chosen as a baseline model given its light-weight architecture and previouse use in skin cancer classification. Advanced models included ResNet50, Random Forest, and XGBoost. ResNet50 is a significantly heavier model and demonstrates how a heavier model performs on a realistic dataset. XGBoost and Random Forest are able to handle class imbalance better than other models and have been used extensively in classical computer vision before the widespread adoption of CNNs. 
 
-### Tools
+
+### Tool
+
+## Repository Structure
+├── README.md               # Project overview and summary
+├── requirements.txt        # Python dependencies
+├── data/                   # Raw and processed datasets
+├── notebooks/              # Jupyter notebooks (EDA, 
+├── models/                 # Saved model files
+├── results/                # Output files, predictions, 
+└── images/                 # Visualizations used in README
