@@ -12,7 +12,7 @@ Authors: Diego Maldonado, Sidhantaa Sarna, Tiffany De La Cruz
 | Attribute     | Details                        |
 |---------------|--------------------------------|
 | **Source**    | [Skin Cancer ISIC Dataset](https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic)      |
-| **Type**      | JPG images   |
+| **Type**      | Dermoscopic imaages, JPG  |
 | **Size**      | 2,357 images, 9 classes, 782 MB
 
 - - -
@@ -43,7 +43,7 @@ These two plots highlight the variability in image sizes in the dataset. Melanom
 After applying a stratified split in both pipelines, the following preprocessing steps were taken:
 
 <ins>Deep Learning</ins>
-- Apply DullRazor algorithm to remove hair follicles (Lee et al., 1998)
+- Apply DullRazor algorithm to remove hair follicles (Lee et al., 1997)
 - Resize shortest side of the image to 256
 - Center crop an area of 224x224
 - Normalizing images 
@@ -54,15 +54,36 @@ After applying a stratified split in both pipelines, the following preprocessing
 - Save results in a CSV file for later training
 
 ## Modeling Choice and Training
+The following models were trained and evaluated:
 
+## How to Run
+1. 
 
-### Tool
+## Future Work
+1. Evaluate the performance of other types of deep learning models, such as transformers or CNN custom-trained on dermoscopic images.
+2. Add non-dermoscopic images of skin cancer to create a more robust dataset. This can help create a model suitable for deployment to the public, and not just as a diagnostic tool for dermatologists.
+3. Test the feature extraction pipeline on other skin cancer datasets and determine if the engineered features are still the most relevant to classification.
 
 ## Repository Structure
-├── README.md               # Project overview and summary
-├── requirements.txt        # Python dependencies
-├── data/                   # Raw and processed datasets
-├── notebooks/              # Jupyter notebooks (EDA, 
-├── models/                 # Saved model files
-├── results/                # Output files, predictions, 
-└── images/                 # Visualizations used in README
+
+- README.md: Summary and overview of the project
+- requirements.txt: Python dependencies
+- dataset/
+  - sample_images: Small sample of the dataset
+  - SC_Dataset_9_Classes.csv: CSV file of hand-crafted features
+- notebooks/
+  - EDA.ipynb: Creates EDA visualizations for the dataset
+  - Image_to_Tabular_Pipeline.ipynb: Creates the 'SC_Dataset_9_Classes,csv'
+- scripts/
+  - download_data.py: Downloads and unzips dataset into directory
+  - preprocess.py: Splits training set and applies preprocessing to all images
+- models/
+  - resnet50.keras: Saved ResNet50 model
+  - rf_9_classes_model.pkl: Saved Random Forest model
+  - xgb_best_model.pkl: Saved XGBoost model 
+- images: Contains the images used in the README.md file
+
+## References
+
+- Grinsztajn, L., Oyallon, E., & Varoquaux, G. (2022). Why do tree-based models still outperform deep learning on tabular data? arXiv. https://arxiv.org/abs/2207.08815
+- Lee, T., Ng, V., Gallagher, R., Coldman, A., & McLean, D. (1997). DullRazor: a software approach to hair removal from images. Computers in biology and medicine, 27(6), 533–543. https://doi.org/10.1016/s0010-4825(97)00020-6
