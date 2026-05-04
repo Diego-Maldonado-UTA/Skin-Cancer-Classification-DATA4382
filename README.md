@@ -115,8 +115,8 @@ Looking at the confusion matrices for both machine learning models, we can see a
 <br> 
 
 <p float="left">
-  <img src=results/fi_rf.png width="550" />
-  <img src=results/fi_xgb.png width="550" /> 
+  <img src=results/fi_rf.png width="400" />
+  <img src=results/fi_xgb.png width="400" /> 
 </p>
 
 One of the main advantages of the machine learning models is their interpretability. For both models, engineered features based on ABCD criteria were the most important in model predictions. This includes features such as diameter_estimate, asymmetry ratio, and min_area_rect_height.  Since so many of the classes look similar, the raw extracted features had relatively less importance. 
