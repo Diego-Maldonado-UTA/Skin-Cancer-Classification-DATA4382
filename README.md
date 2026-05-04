@@ -29,12 +29,12 @@ The graph above visualizes the high class imbalance in the dataset, the main pro
 ![Visualization 2](images/sample_plot.png)
 A sample plot of images from each class tells us several things. Firstly, many of the classes closely resemble each other, making a classification task even more difficult. Additionally, there are artifacts such as hair follicles and edges of dermoscopic that would distract the CNN. 
 
-<br>
+
 
 ### Varying Image Sizes
 <p float="left">
-  <img src=images/avg_size.png width="479" />
-  <img src=images/size_plot.png width="415" /> 
+  <img src=images/avg_size.png width="400" />
+  <img src=images/size_plot.png width="400" /> 
 </p>
 
 These two plots highlight the variability in image sizes in the dataset. Melanoma, nevus, and sebhorreic keratosis had significantly bigger images compared to the other classes. Initial CNN modeling attempts directly resized the images down to 224x224. compressing the larger images and distorting lesion boundaries.
